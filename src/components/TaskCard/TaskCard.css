@@ -1,0 +1,134 @@
+.task-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 14px 16px;
+    cursor: grab;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-card--overdue {
+    border-color: rgba(252, 54, 57, 0.6);
+}
+
+.task-card--editing {
+    cursor: default;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.task-card--error {
+    border-color: #FC3639;
+}
+
+.task-card__actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.task-card:hover .task-card__actions {
+    opacity: 1;
+}
+
+.task-card__action-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.task-card__action-btn:hover {
+    color: #0184CF;
+}
+
+.task-card__action-btn--delete:hover {
+    color: #FC3639;
+}
+
+.task-card__row {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-right: 36px;
+}
+
+.task-card__label {
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 6px;
+}
+
+.task-card__value {
+    color: rgba(255, 255, 255, 0.87);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.task-card__value--overdue {
+    color: rgba(252, 54, 57, 0.85);
+}
+
+/* Режим редактирования */
+.task-card__field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.task-card__input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 3px 8px;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 13px;
+    outline: none;
+}
+
+.task-card__input:focus {
+    border-color: #0184CF;
+}
+
+.task-card__edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.icon-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn--cancel {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.icon-btn--confirm {
+    color: #0184CF;
+}
